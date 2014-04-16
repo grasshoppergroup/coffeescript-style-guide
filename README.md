@@ -1,22 +1,8 @@
-# CoffeeScript Style Guide
+# Grasshopper CoffeeScript Style Guide
 
 This guide presents a collection of best-practices and coding conventions for the [CoffeeScript][coffeescript] programming language.
 
-This guide is intended to be community-driven, and contributions are highly encouraged.
-
-Please note that this is a work-in-progress: there is much more that can be specified, and some of the guidelines that have been specified may not be deemed to be idiomatic by the community (in which case, these offending guidelines will be modified or removed, as appropriate).
-
-## Inspiration
-
-The details in this guide have been very heavily inspired by several existing style guides and other resources. In particular:
-
-- [PEP-8][pep8]: Style Guide for Python Code
-- Bozhidar Batsov's [Ruby Style Guide][ruby-style-guide]
-- [Google's JavaScript Style Guide][google-js-styleguide]
-- [Common CoffeeScript Idioms][common-coffeescript-idioms]
-- Thomas Reynolds' [CoffeeScript-specific Style Guide][coffeescript-specific-style-guide]
-- Jeremy Ashkenas' [code review][spine-js-code-review] of [Spine][spine-js]
-- The [CoffeeScript FAQ][coffeescript-faq]
+This guide is intended to be used by Grasshopper employees and contractors.
 
 ## Table of Contents
 
@@ -49,12 +35,19 @@ The details in this guide have been very heavily inspired by several existing st
 <a name="tabs_or_spaces"/>
 ### Tabs or Spaces?
 
-Use **spaces only**, with **2 spaces** per indentation level. Never mix tabs and spaces.
+Use **spaces only**, with **4 spaces** per indentation level. Never mix tabs and spaces.
 
 <a name="maximum_line_length"/>
 ### Maximum Line Length
 
-Limit all lines to a maximum of 79 characters.
+There is no maximum line length; use best judgment for readability.
+
+- Use only 1 expression per line.
+
+    ```coffeescript
+       if a is b then return c # Yes
+       if a is b then return c else return d # No
+    ```
 
 <a name="blank_lines"/>
 ### Blank Lines
@@ -125,7 +118,7 @@ Avoid extraneous whitespace in the following situations:
 - Immediately inside parentheses, brackets or braces
 
     ```coffeescript
-       ($ 'body') # Yes
+       ($'body') # Yes
        ( $ 'body' ) # No
     ```
 
@@ -290,7 +283,7 @@ new Tag(new Value(a, b), new Arg(c))
 You will sometimes see parentheses used to group functions (instead of being used to group function parameters). Examples of using this style (hereafter referred to as the "function grouping style"):
 
 ```coffeescript
-($ '#selektor').addClass 'klass'
+($'#selektor').addClass 'klass'
 
 (foo 4).bar 8
 ```
@@ -306,8 +299,8 @@ foo(4).bar 8
 In cases where method calls are being chained, some adopters of this style prefer to use function grouping for the initial call only:
 
 ```coffeescript
-($ '#selektor').addClass('klass').hide() # Initial call only
-(($ '#selektor').addClass 'klass').hide() # All calls
+($'#selektor').addClass('klass').hide() # Initial call only
+(($'#selektor').addClass 'klass').hide() # All calls
 ```
 
 The function grouping style is not recommended. However, **if the function grouping style is adopted for a particular project, be consistent with its usage.**
@@ -318,7 +311,7 @@ The function grouping style is not recommended. However, **if the function group
 Use string interpolation instead of string concatenation:
 
 ```coffeescript
-"this is an #{adjective} string" # Yes
+'this is an #{adjective} string' # Yes
 "this is an " + adjective + " string" # No
 ```
 
@@ -481,14 +474,4 @@ console.log args... # Yes
 (a, b, c, rest...) -> # Yes
 ```
 
-[coffeescript]: http://jashkenas.github.com/coffee-script/
-[coffeescript-issue-425]: https://github.com/jashkenas/coffee-script/issues/425
-[spine-js]: http://spinejs.com/
-[spine-js-code-review]: https://gist.github.com/1005723
-[pep8]: http://www.python.org/dev/peps/pep-0008/
-[ruby-style-guide]: https://github.com/bbatsov/ruby-style-guide
-[google-js-styleguide]: http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
-[common-coffeescript-idioms]: http://arcturo.github.com/library/coffeescript/04_idioms.html
-[coffeescript-specific-style-guide]: http://awardwinningfjords.com/2011/05/13/coffeescript-specific-style-guide.html
-[coffeescript-faq]: https://github.com/jashkenas/coffee-script/wiki/FAQ
-[camel-case-variations]: http://en.wikipedia.org/wiki/CamelCase#Variations_and_synonyms
+By adding an ellipsis (...) next to no more than one of a function's arguments, CoffeeScript will combine all of the argument values not captured by other named arguments into a list. It will serve up an empty list even if some of the named arguments were not supplied.

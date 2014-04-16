@@ -18,7 +18,7 @@
     },
     "max_line_length": {
         "name": "max_line_length",
-        "value": 80,
+        "value": 100,
         "level": "warn",
         "limitComments": true
     },
@@ -33,7 +33,7 @@
     },
     "indentation": {
         "name": "indentation",
-        "value": 2,
+        "value": 4,
         "level": "error"
     },
     "camel_case_classes": {
