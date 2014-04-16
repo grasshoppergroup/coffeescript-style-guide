@@ -475,3 +475,15 @@ console.log args... # Yes
 ```
 
 By adding an ellipsis (...) next to no more than one of a function's arguments, CoffeeScript will combine all of the argument values not captured by other named arguments into a list. It will serve up an empty list even if some of the named arguments were not supplied.
+
+[coffeescript]: http://jashkenas.github.com/coffee-script/
+[coffeescript-issue-425]: https://github.com/jashkenas/coffee-script/issues/425
+[spine-js]: http://spinejs.com/
+[spine-js-code-review]: https://gist.github.com/1005723
+[pep8]: http://www.python.org/dev/peps/pep-0008/
+[ruby-style-guide]: https://github.com/bbatsov/ruby-style-guide
+[google-js-styleguide]: http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
+[common-coffeescript-idioms]: http://arcturo.github.com/library/coffeescript/04_idioms.html
+[coffeescript-specific-style-guide]: http://awardwinningfjords.com/2011/05/13/coffeescript-specific-style-guide.html
+[coffeescript-faq]: https://github.com/jashkenas/coffee-script/wiki/FAQ
+[camel-case-variations]: http://en.wikipedia.org/wiki/CamelCase#Variations_and_synonyms
