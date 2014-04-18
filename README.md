@@ -88,7 +88,7 @@ foo = [
   'string'
   'values'
 ]
-bar:
+bar =
   label: 'test'
   value: 87
 
@@ -98,7 +98,7 @@ foo = [
   'string',
   'values'
 ]
-bar:
+bar =
   label: 'test',
   value: 87
 ```
