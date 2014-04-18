@@ -43,10 +43,23 @@ Use **spaces only**, with **4 spaces** per indentation level. Never mix tabs and
 There is no maximum line length; use best judgment for readability.
 
 - Use only 1 expression per line.
+- Implicitly vairable names work, but not as actual var names.
 
     ```coffeescript
-       if a is b then return c # Yes
-       if a is b then return c else return d # No
+       # Yes
+       if a is b then return c
+       
+       # Yes 
+       if a is b
+           return c
+       else
+           return d
+       
+       # No
+       if a is b then return c else return d
+       
+       # No
+       return c a is b then return c else return d
     ```
 
 <a name="blank_lines"/>
