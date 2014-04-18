@@ -324,7 +324,7 @@ The function grouping style is not recommended. However, **if the function group
 Use string interpolation instead of string concatenation:
 
 ```coffeescript
-'this is an #{adjective} string' # Yes
+"this is an #{adjective} string" # Yes
 "this is an " + adjective + " string" # No
 ```
 
