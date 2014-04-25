@@ -398,14 +398,13 @@ $('#selektor').addClass 'klass'
 foo(4).bar 8
 ```
 
-In cases where method calls are being chained, some adopters of this style prefer to use function grouping for the initial call only:
+No function grouping:
 
 ```coffeescript
-($'#selektor').addClass('klass').hide() # Initial call only
-(($'#selektor').addClass 'klass').hide() # All calls
+# No
+($ '#selektor').addClass('klass').hide() # Initial call only
+(($ '#selektor').addClass 'klass').hide() # All calls
 ```
-
-The function grouping style is not recommended. However, **if the function grouping style is adopted for a particular project, be consistent with its usage.**
 
 <a name="strings"/>
 ## Strings
@@ -422,22 +421,24 @@ Prefer single quoted strings (`''`) instead of double quoted (`""`) strings, unl
 <a name="conditionals"/>
 ## Conditionals
 
-Favor `unless` over `if` for negative conditions.
+Favor `isnt` over `unless` for negative conditions.
 
 Instead of using `unless...else`, use `if...else`:
 
 ```coffeescript
-  # Yes
-  if true
-    ...
-  else
-    ...
-
-  # No
-  unless false
-    ...
-  else
-    ...
+   # Yes
+   if true
+      ...
+   else
+      ...
+   
+   # Yes
+   if a isnt b
+      ...
+   
+   # No
+   unless a is b
+      ...
 ```
 
 Multi-line if/else clauses should use indentation:
