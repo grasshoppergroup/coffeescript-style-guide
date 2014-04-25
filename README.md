@@ -278,10 +278,15 @@ Use `camelCase` (with a leading lowercase character) to name all variables, meth
 
 ```coffeescript
 # Yes
+
+myVar = 123
+
 myFunc = ->
     return this
     
 # No
+myvar = 123
+
 myfunc = ->
     return this
 ```
