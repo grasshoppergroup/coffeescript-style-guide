@@ -423,15 +423,7 @@ Prefer single quoted strings (`''`) instead of double quoted (`""`) strings, unl
 
 Favor `isnt` over `unless` for negative conditions.
 
-Instead of using `unless...else`, use `if...else`:
-
 ```coffeescript
-   # Yes
-   if true
-      ...
-   else
-      ...
-   
    # Yes
    if a isnt b
       ...
@@ -439,6 +431,22 @@ Instead of using `unless...else`, use `if...else`:
    # No
    unless a is b
       ...
+```
+
+Always use positives first, so instead of using `unless...else`, use `if...else`:
+
+```coffeescript
+   # Yes
+   if true
+       doIt()
+   else
+       doNotIt()
+   
+   # No
+   unless true
+       doNotIt()
+   else
+       doIt()
 ```
 
 Multi-line if/else clauses should use indentation:
