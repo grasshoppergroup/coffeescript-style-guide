@@ -107,7 +107,7 @@ class myClass
 
 Do not include trailing whitespace on any lines.
 
-SublimeText2 users go to SublimeText 2 > Preferences > User Settings (or just hit the Mac Standard cmd + ,). This should open your User Settings as a JSON file. Add the following to your file
+SublimeText2 users go to SublimeText 2 > Preferences > User Settings (or just hit the Mac Standard cmd + ,). This should open your User Settings as a JSON file. Add the following to your file:
 
 ```
 "trim_trailing_white_space_on_save": true
@@ -148,17 +148,21 @@ UTF-8 is the preferred source file encoding.
 <a name="module_imports"/>
 ## Module Imports
 
-If using a module system (CommonJS Modules, AMD, etc.), `require` statements should be placed on separate lines.
+Make the prevebial 'xmas tree' when defining modules, unless 1 module depends on another.
 
 ```coffeescript
-require 'lib/setup'
-Backbone = require 'backbone'
-```
-These statements should be grouped in the following order:
+#Yes
+require 'setup'
+lib = equire 'lib'
+server = require 'node'
+backbone = require 'backbone'
 
-1. Standard library imports _(if a standard library exists)_
-2. Third party library imports
-3. Local imports _(imports specific to this application or library)_
+#No
+backbone = require 'backbone'
+require 'setup'
+lib = equire 'lib'
+server = require 'node'
+```
 
 <a name="whitespace"/>
 ## Whitespace in Expressions and Statements
