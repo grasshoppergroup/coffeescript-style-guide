@@ -48,16 +48,16 @@ There is no maximum line length; use best judgment for readability.
     ```coffeescript
        # Yes
        if a is b then return c
-       
-       # Yes 
+
+       # Yes
        if a is b
            return c
        else
            return d
-       
+
        # No
        if a is b then return c else return d
-       
+
        # No
        return c a is b then return c else return d
     ```
@@ -70,6 +70,37 @@ Separate top-level function and class definitions with a single blank line.
 Separate method definitions inside of a class with a single blank line.
 
 Use a single blank line within the bodies of methods or functions in cases where this improves readability (e.g., for the purpose of delineating logical sections).
+
+```coffeescript
+   # Yes
+   class myClass
+
+     fooFunc ->
+      return this
+
+     barFunc ->
+
+      math =
+        root:   Math.sqrt
+        square: square
+        cube:   (x) -> x * square x
+
+      cubes = (math.cube num for num in list)
+
+      return this
+
+   # No
+   class myClass
+     fooFunc ->
+      return this
+     barFunc ->
+      math =
+        root:   Math.sqrt
+        square: square
+        cube:   (x) -> x * square x
+      cubes = (math.cube num for num in list)
+      return this
+```
 
 <a name="trailing_whitespace"/>
 ### Trailing Whitespace
