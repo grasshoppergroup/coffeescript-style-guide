@@ -110,7 +110,7 @@ Do not include trailing whitespace on any lines.
 SublimeText2 users go to SublimeText 2 > Preferences > User Settings (or just hit the Mac Standard cmd + ,). This should open your User Settings as a JSON file. Add the following to your file
 
 ```
-&quot;trim_trailing_white_space_on_save&quot;: true
+"trim_trailing_white_space_on_save": true
 ```
 
 <a name="optional_commas"/>
