@@ -72,34 +72,34 @@ Separate method definitions inside of a class with a single blank line.
 Use a single blank line within the bodies of methods or functions in cases where this improves readability (e.g., for the purpose of delineating logical sections).
 
 ```coffeescript
-   # Yes
-   class myClass
+# Yes
+class myClass
 
-     fooFunc ->
-      return this
+    fooFunc ->
+        return this
 
-     barFunc ->
+    barFunc ->
 
-      math =
+        math =
         root:   Math.sqrt
         square: square
         cube:   (x) -> x * square x
 
-      cubes = (math.cube num for num in list)
+        cubes = (math.cube num for num in list)
 
-      return this
+        return this
 
-   # No
-   class myClass
-     fooFunc ->
-      return this
-     barFunc ->
-      math =
-        root:   Math.sqrt
-        square: square
-        cube:   (x) -> x * square x
-      cubes = (math.cube num for num in list)
-      return this
+# No
+    class myClass
+        fooFunc ->
+            return this
+        barFunc ->
+            math =
+            root:   Math.sqrt
+            square: square
+            cube:   (x) -> x * square x
+            cubes = (math.cube num for num in list)
+            return this
 ```
 
 <a name="trailing_whitespace"/>
