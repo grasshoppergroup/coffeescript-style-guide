@@ -153,14 +153,14 @@ Make the prevebial 'xmas tree' when defining modules, unless 1 module depends on
 ```coffeescript
 #Yes
 require 'setup'
-lib = equire 'lib'
+lib = require 'lib'
 server = require 'node'
 backbone = require 'backbone'
 
 #No
 backbone = require 'backbone'
 require 'setup'
-lib = equire 'lib'
+lib = require 'lib'
 server = require 'node'
 ```
 
@@ -265,7 +265,10 @@ However, inline comments can be useful in certain scenarios:
 
 ```coffeescript
   # Yes
-  x = x + 1 # Compensate for border
+  obj =
+      a = null
+      b = x + 1 # Compensate for border
+      c = []
 ```
 
 <a name="naming_conventions"/>
