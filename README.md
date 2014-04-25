@@ -75,10 +75,10 @@ Use a single blank line within the bodies of methods or functions in cases where
 # Yes
 class myClass
 
-    fooFunc ->
+    fooFunc = ->
         return this
 
-    barFunc ->
+    barFunc = ->
 
         math =
         root:   Math.sqrt
@@ -91,9 +91,9 @@ class myClass
 
  # No
  class myClass
-     fooFunc ->
+     fooFunc = ->
          return this
-     barFunc ->
+     barFunc = ->
          math =
          root:   Math.sqrt
          square: square
@@ -276,9 +276,29 @@ However, inline comments can be useful in certain scenarios:
 
 Use `camelCase` (with a leading lowercase character) to name all variables, methods, and object properties.
 
-Use `CamelCase` (with a leading uppercase character) to name all classes. _(This style is also commonly referred to as `PascalCase`, `CamelCaps`, or `CapWords`, among [other alternatives][camel-case-variations].)_
+```coffeescript
+# Yes
+myFunc = ->
+    return this
+    
+# No
+myfunc = ->
+    return this
+```
 
-_(The **official** CoffeeScript convention is camelcase, because this simplifies interoperability with JavaScript. For more on this decision, see [here][coffeescript-issue-425].)_
+Use `PascalCase` (with a leading uppercase character) to name all classes.
+
+```coffeescript
+# Yes
+class MyClass
+    constructor: ->
+        return this
+        
+# No
+class myClass
+    constructor: ->
+        return this
+```
 
 For constants, use all uppercase with underscores:
 
