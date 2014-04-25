@@ -89,7 +89,7 @@ class myClass
 
         return this
 
-# No
+    # No
     class myClass
         fooFunc ->
             return this
