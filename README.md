@@ -547,11 +547,12 @@ If a custom annotation is required, the annotation should be documented in the p
 
 `not` is preferred over `!`.
 
-`or=` should be used when possible:
+`or=` should be avoided when possible, use `or` or `?=`:
 
 ```coffeescript
-temp or= {} # Yes
-temp = temp || {} # No
+temp = temp ?= {} # For: undefined and null
+
+temp = temp or {} # For: undefined, 0, “”, false and null
 ```
 
 Prefer shorthand notation (`::`) for accessing an object's prototype:
@@ -561,21 +562,14 @@ Array::slice # Yes
 Array.prototype.slice # No
 ```
 
-Prefer `@property` over `this.property`.
+Prefer `@property` over `this.property` if they represent the same thing.
 
 ```coffeescript
 return @property # Yes
 return this.property # No
 ```
 
-However, avoid the use of **standalone** `@`:
-
-```coffeescript
-return this # Yes
-return @ # No
-```
-
-Avoid `return` where not required, unless the explicit return increases clarity.
+Manually `return` only when necessary.
 
 Use splats (`...`) when working with functions that accept variable numbers of arguments:
 
