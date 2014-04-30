@@ -569,7 +569,7 @@ return @property # Yes
 return this.property # No
 ```
 
-Manually `return` only when necessary.
+Avoid `return` where not required, unless the explicit return increases clarity.
 
 Use splats (`...`) when working with functions that accept variable numbers of arguments:
 
