@@ -148,7 +148,7 @@ UTF-8 is the preferred source file encoding.
 <a name="module_imports"/>
 ## Module Imports
 
-Make the prevebial 'xmas tree' when defining modules, unless 1 module depends on another.
+Make the proverbial 'xmas tree' when defining modules, unless 1 module depends on another.
 
 ```coffeescript
 #Yes
