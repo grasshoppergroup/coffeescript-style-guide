@@ -81,9 +81,9 @@ class myClass
     barFunc = ->
 
         math =
-        root:   Math.sqrt
-        square: square
-        cube:   (x) -> x * square x
+           root: Math.sqrt
+           square: square
+           cube: (x) -> x * square x
 
         cubes = (math.cube num for num in list)
 
