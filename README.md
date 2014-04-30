@@ -385,7 +385,7 @@ print inspect value
 You will sometimes see parentheses used to group functions (instead of being used to group function parameters). Examples of using this style (hereafter referred to as the "function grouping style"):
 
 ```coffeescript
-($ '#selektor').addClass 'klass'
+$('#selektor').addClass 'klass'
 
 (foo 4).bar 8
 ```
